@@ -26,7 +26,7 @@ class BoundedSlot:
             self._getters.popleft().set_result(None)
 
     async def get(self):
-        # Lost-wakeup race (queue.py:41): if this future is cancelled after it
+        # Lost-wakeup race in get(): if this future is cancelled after it
         # has been appended to _getters, a later put() still pops and resolves
         # it, so the handed-over item is dropped and a blocked put() is never
         # released. Recorded interleaving: tests/fixtures/race_schedule.log:1
