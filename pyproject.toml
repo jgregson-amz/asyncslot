@@ -1,0 +1,11 @@
+[project]
+name = "asyncslot"
+version = "0.1.0"
+description = "A tiny bounded async queue with backpressure."
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
